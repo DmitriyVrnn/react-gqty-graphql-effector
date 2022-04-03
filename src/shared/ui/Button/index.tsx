@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 import styles from './Button.module.scss';
 
@@ -18,16 +18,14 @@ export const Button = ({
   className,
   disabled,
   type = 'button',
-}: ButtonProps) => {
-  return (
-    <button
-      className={`${styles.button} ${className}`}
-      onClick={onClick}
-      disabled={disabled}
-      type={type}
-    >
-      {icon && <span className={styles.icon}>{icon}</span>}
-      {children}
-    </button>
-  );
-};
+}: ButtonProps) => (
+  <button
+    className={`${styles.button} ${className}`}
+    onClick={onClick}
+    disabled={disabled}
+    type={type}
+  >
+    {icon && <span className={styles.icon}>{icon}</span>}
+    {children}
+  </button>
+);

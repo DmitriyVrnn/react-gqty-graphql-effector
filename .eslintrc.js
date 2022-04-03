@@ -1,0 +1,58 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: [
+    'plugin:effector/recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'react-hooks',
+    'effector',
+  ],
+  rules: {
+    'react/function-component-definition': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'import/prefer-default-export': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': 'off',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'no-param-reassign': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    camelcase: 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'no-console': 'off',
+    'react/require-default-props': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'off',
+    'react/prop-types': 'off',
+    'no-return-assign': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/control-has-associated-label': [2, {
+      ignoreElements: [
+        'a',
+      ],
+    }],
+    'jsx-a11y/anchor-has-content': 'off',
+    'react/button-has-type': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+  },
+};

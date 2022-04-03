@@ -1,11 +1,13 @@
 import React from 'react';
-import { Button } from '../shared/ui/Button';
+
+import { AlbumList } from '../features/album-list';
+
 import './styles/app.css';
 
 function App() {
   return (
     <div className="App">
-      <Button onClick={() => console.log('clickj')}>Hello</Button>
+      <AlbumList />
     </div>
   );
 }
