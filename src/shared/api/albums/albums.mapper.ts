@@ -1,4 +1,5 @@
 import { AlbumsPage, PhotosPage } from '../../../app/gqty';
+import { AlbumEntity, PhotoEntity } from '../../../entities/albums/model/types';
 
 export const mapPhotos = ({ data }: PhotosPage): PhotoEntity[] => (data ? data.map((photo) => ({
   id: String(photo?.id),

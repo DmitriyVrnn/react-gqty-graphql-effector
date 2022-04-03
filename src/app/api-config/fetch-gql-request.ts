@@ -1,12 +1,10 @@
 import { createEffect, Effect } from 'effector';
-import {
-  castNotSkeletonDeep, NotSkeletonDeep, ResolveOptions,
-} from 'gqty';
+import { ResolveOptions } from 'gqty';
 import { resolved } from '../gqty';
 
 interface Options<Params, Done, Map> {
   request: (params: Params) => Done;
-  map: (data: NotSkeletonDeep<Done>, params: Params) => Map;
+  map: (data: Done, params: Params) => Map;
   options?: ResolveOptions<Map>;
 }
 
@@ -24,8 +22,7 @@ export function createGqlRequest<Params = void, Done = void, Map = void>({
     try {
       return await resolved(() => {
         const data = request(params as Params);
-        const casted = castNotSkeletonDeep(data);
-        return map(casted, params as Params);
+        return map(data, params as Params);
       }, options);
     } catch (error) {
       throw new Error(JSON.stringify(error));
